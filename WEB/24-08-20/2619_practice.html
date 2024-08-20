@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div p {
+        /* div 안에 있는 모든 p의 요소를 파란색으로 변경 */
+      color: blue;
+    }
+    div > p {
+        /* div 바로 밑에 있는 p의 요소만 빨간색으로 변경 */
+      color: crimson;
+    }
+
+  </style>
+</head>
+<body>
+    <div>
+        <p>자식</p>
+        <ol><p>손자</p></ol>
+        <p>자식</p>
+    </div>
+</body>
+</html>
