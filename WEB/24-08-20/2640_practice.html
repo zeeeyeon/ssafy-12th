@@ -5,17 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    img { 
+      width: 250px;
+      
+    }
+
     .container {
-        width: 170px;
-        height: 300px;
+        width: 300px;
+        height: 500px;
+        border: 1px solid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-container .name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 228, 196, 0.8);
+      padding: 10px;
+      margin: 0;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div>
+    <div class="image-container">
       <img src="profile.jpg" alt="Profile Image">
-      <p>Name</p>
+      <p class="name"><strong>Name</strong></p>
     </div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
   </div>
