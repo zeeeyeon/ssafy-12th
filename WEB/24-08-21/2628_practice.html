@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="container w-50">
+    <div id="liveAlertPlaceholder">
+      <div></div>
+    </div>
+
+    <h1 style="font-weight: bold">SSAFY 전용 Gitlab 시스템</h1>
+    <hr />
+
+    <div class="card">
+      <div
+        class="card-header bg-white text-center border-primary border-3"
+        style="font-weight: bold"
+      >
+        Sign in
+      </div>
+      <div class="card-body">
+        <div>
+          <label for="email-input" class="form-label" style="font-weight: bold"
+            >Username or Email</label
+          >
+          <input type="email" class="form-control" id="email-input" />
+          <label
+            for="inputPassword5"
+            class="form-label"
+            style="font-weight: bold"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="inputPassword5"
+            class="form-control"
+            aria-describedby="passwordHelpBlock"
+          />
+
+          <div class="d-flex justify-content-between">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" />
+              <label class="form-check-label mr-auto" for="gridCheck">
+                Remember me
+              </label>
+            </div>
+            <a href="#">Forgot your password?</a>
+          </div>
+
+          <div class="d-grid">
+            <button
+              class="w-100 mx-auto btn bg-success text-white"
+              id="liveAlertBtn"
+              type="button"
+            >
+              Sign in
+            </button>
+          </div>
+
+          <script>
+            const alertPlaceholder = document.getElementById(
+              "liveAlertPlaceholder"
+            );
+            const appendAlert = () => {
+              const wrapper = alertPlaceholder.querySelector("div");
+              wrapper.innerHTML = `<div class="alert alert-danger" id="liveAlertPlaceholder" role="alert">Invalid Login or password</div>`;
+            };
+
+            const alertTrigger = document.getElementById("liveAlertBtn");
+            if (alertTrigger) {
+              alertTrigger.addEventListener("click", () => {
+                appendAlert();
+              });
+            }
+          </script>
+
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
