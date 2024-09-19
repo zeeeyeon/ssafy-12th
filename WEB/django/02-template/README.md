@@ -25,13 +25,13 @@
 >> - 'block' tag : 상위 템플릿에 작성하며 하위 템플릿이 작성 할 수 있는 공간을 지정   {% block content%} {% endblock content %}
 
 > ## 요청과 응답
-> - ![img_1.png](img_1.png)
-> - ![img_2.png](img_2.png)
+> ![img_1.png](img_1.png)
+> ![img_2.png](img_2.png)
 >> - action : 입력 데이터가 전송될 url 을 지정, 속성을 지정하지 않으면 데이터는 현재 form이 있는 페이지의 url로 보내짐
 >> - method : 데이터를 어떤 방식으로 보낼 것인지 정의, HTTP request methods(GET, POST)지정
 >> - HTTP request 객체 : form으로 전송한 데이터 뿐만 아니라 Django로 들어오는 모든 요청 관련 데이터가 담겨 있음(view 함수의 첫번째 인자로 전달)
->> - ![img_3.png](img_3.png)
->> - ![img_4.png](img_4.png)
+>> ![img_3.png](img_3.png)
+>> ![img_4.png](img_4.png)
 
 > ### Variable Routing
 > - URL 일부에 변수를 포함시키는 것(view함수의 인자로 전달)
