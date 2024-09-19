@@ -35,4 +35,7 @@ def catch(request):
     return render(request, 'catch.html', context)
 
 def greeting(request, name):
+    context = {
+        'name' : name
+    }
     return render(request, 'greeting.html', context)
