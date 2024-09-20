@@ -18,13 +18,18 @@
 >> - $ python manage.py migrate
 > - auto_now : 데이터가 저장될 때마다 자동으로 현재 날짜시간을 저장(수정일)
 > - auto_now_add : 데이터가 처음 생성될 때만 자동으로 현재 날짜 시간을 저장(수정일 갱신 x, 작성일)
-> - ![img.png](img.png)
+> ![img.png](img.png)
 > - 새로 만들어지는 컬럼은 무조건 값을 가지고 생성-> 무결성의 원칙
-> - ![img_1.png](img_1.png)
-> - ![img_2.png](img_2.png)
-> - ![img_3.png](img_3.png)
+> ![img_1.png](img_1.png)
+> ![img_2.png](img_2.png)
+> ![img_3.png](img_3.png)
 >> - model class에 변경사항이 생겼다면 반드시 새로운 설계도를 생성하고, 이를 DB에 반영해야 한다.
 >> - model class 변경 -> makemigrations -> migrate
+
+>> - $ python manage.py showmigrations
+>> - migrate 됐는지 안됐는지 여부를 확인하는 명령어, X 표시가 있으면 migrate 완료되었음을 의미
+>> - $ python manage.py sqlmigrate articles 0001
+>> - 해당 migrations 파일이 SQL 언어로 어떻게 번역되어 DB에 전달되는지 확인하는 명령어
 
 
 > ### Automatic admin interface
@@ -39,3 +44,9 @@
 >> - 4. admin site 로그인 후 등록된 모델 클래스 확인
 >> - 5. 데이터 생성, 수정, 삭제 테스트
 >> - 6. 테이블 확인
+
+
+> ### 데이터베이스 초기화
+> - 1. migration 파일 삭제
+> - 2. db.sqlite3 파일 삭제
+>> - __init__.py, migrations 폴더 삭제 하지 않도록 주의
