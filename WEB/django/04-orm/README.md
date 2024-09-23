@@ -41,4 +41,10 @@
 > - get() : 주어진 매개변수와 일치하는 객체를 반환, Article.objects.get(pk = 1)
 >   - 특정 조건을 만족하지 않으면 Does Not Exist 예외 발생
 >   - 반환 값이 둘 이상이라면 MultipleObjectsReturned 예외 발생
->   - primary key와 같이 ***고유성(uniqueness)***을 보장하는 조회에서 사용 
+>   - primary key와 같이 고유성(uniqueness)을 보장하는 조회에서 사용 
+
+> ### Field lookups
+> - Query에서 조건을 구성하는 방법
+> - QuerySet 메서드 filter(), exclude() get()에 대한 키워드 인자로 지정됨
+> - Article.objects.filter(content__contains='aaa'), 'aaa'이 포함된 모든 게시글 조회
+> - Article.objects.filter(title__startswith='he'), 제목이 'he'로 시작하는 모든 게시글 조회
