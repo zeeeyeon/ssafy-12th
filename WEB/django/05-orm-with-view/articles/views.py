@@ -23,8 +23,8 @@ def new(request):
 # 과거 catch
 def create(request):
     # 1. 사용자 요청으로부터 입력 데이터를 추출
-    title = request.GET.get('title')
-    content = request.GET.get('content')
+    title = request.POST.get('title')
+    content = request.POST.get('content')
 
     # 2.1, 필드가 많을 경우 객체에 값을 주기 힘듦
     # article = Article()

@@ -8,6 +8,7 @@
   <h1>NEW</h1>
 
   <form action="{% url 'articles:create' %}" method="post">
+      {% csrf_token %}
     <input type="text" name="title">
     <textarea name="content"></textarea>
     <input type="submit">
