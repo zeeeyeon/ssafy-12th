@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Article
 
 # Create your views here.
@@ -41,4 +41,37 @@ def create(request):
 
 
     # 3. 추출 한 입력 데이터를 활용하여 DB에 저장 요청
-    return render(request, 'articles/detail.html', {})
+    # return render(request, 'articles/detail.html', {})
+    return redirect('articles:detail', article.pk)
+
+def delete(request, pk):
+    article = Article.objects.get(pk=pk)
+
+    article.delete()
+
+    return redirect('articles:index')
+
+def edit(request, pk):
+    article = Article.objects.get(pk=pk)
+
+    context = {
+        'article': article,
+    }
+    return render(request, 'articles/edit.html', context)
+
+def update(request, pk):
+    # 1. 어떤 게시글 수정할 지 조회
+    article = Article.objects.get(pk=pk)
+
+    # 2. 사용자로부터 받은 새로운 입력 데이터 추출
+    title = request.POST.get('title')
+    content = request.POST.get('content')
+
+    # 3. 기존 게시글의 데이터를 사용자로 받은 데이터로 새로 할당
+    article.title = title
+    article.content = content
+
+    # 4. 저장
+    article.save()
+
+    return redirect('articles:detail', article.pk)
