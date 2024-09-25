@@ -2,7 +2,7 @@
 
 > ### Django Form
 > - 사용자 입력 데이터를 수집하고, 처리 및 유효성 검사를 수행하기 위한 도구
-> - 유효성 검사를 단순화하고 자동화 할 수 있는 기능을 제공
+> - 유효성 검사를 단순화, 자동화 할 수 있는 기능을 제공
 
 > - Form class 적용
 > ![img.png](img.png)
@@ -15,6 +15,8 @@
 
 > - Widgets
 > - HTML 'input' elements의 표현을 담당, 단순히 출력 부분을 변경하는 것
+> ![img_9.png](img_9.png)
+> ![img_10.png](img_10.png)
 
 > ### ModelForm
 >> #### Form
@@ -39,4 +41,21 @@
 >> - 주의 사항
 >> - Django에서 ModelForm에 대한 추가 정보나 속성을 작성하는 클래스 구조를 Meta 클래스로 작성 했을 뿐이며, python의 inner class와 같은 문법적인 관점으로 접근하지 말 것.
 
+> ### HTTP 요청 다루기
+> - new method & create method
+> - 공통점 : 데이터 생성 구현
+> - 차이점 : new : GET request, create: POST request
+>> - HTTP request method 차이점을 활용해 동일한 목적을 가지는 2개의 view 함수를 하나로 구조화 
+ 
+> - 유효성 검사를 통과하지 못하였을 때도 존재, context를 마지막에 위치시킴
+> ![img_6.png](img_6.png)
+>> - request method에 따른 요청의 변화
+>> ![img_7.png](img_7.png)
 
+> ### ModelForm의 키워드 인자 구성
+> - data는 첫번째에 위치한 키워드 인자이기 때문에 생략 가능, 부모의 생성자 함수에 맞춰서 인자 구성
+> - instance는 9번째에 위치한 키워드 인자이기 때문에 생략할 수 없었음
+>![img_8.png](img_8.png)
+
+> - 필드 수동으로 렌더링하는 법
+> ![img_11.png](img_11.png)

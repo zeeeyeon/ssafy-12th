@@ -6,17 +6,21 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Articles</h1>
-  <a href="{% url 'articles:new' %}">NEW</a>
-  {% comment %} <p>{{ articles }}</p> {% endcomment %}
-  {% for article in articles %}
-    <p>글 번호: {{ article.pk }}</p>
-    <a href="{% url 'articles:detail' article.pk %}">
-      <p>글 제목: {{ article.title }}</p>
-    </a>
-    <p>글 내용: {{ article.content }}</p>
-    <hr>
-  {% endfor %}
-
+  <h1>UPDATE</h1>
+  <form action="{% url 'articles:update' article.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.ad_p }}
+<!--    <div>-->
+<!--      <label for="title">Title: </label>-->
+<!--      <input type="text" name="title" id="title" value="{{ article.title }}">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <label for="content">Content: </label>-->
+<!--      <textarea name="content" id="content">{{ article.content }}</textarea>-->
+<!--    </div>-->
+    <input type="submit" value="수정">
+  </form>
+  <hr>
+  <a href="{% url 'articles:detail' article.pk %}">[back]</a>
 </body>
 </html>
