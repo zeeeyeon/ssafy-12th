@@ -23,7 +23,7 @@
 > ![img_5.png](img_5.png)
 > - 5. 웹 서버는 받은 쿠키 정보를 확인하고, 필요에 따라 사용자 식별, 세션 관리 등을 수행
 > ![img_6.png](img_6.png)
-> - 6. 웹 서버는 요청에 대한 응답을 보내며, 필요한 경우 새로운 쿠키를 설정하거나 기존 쿠키를 수정할 수 있음.\
+> - 6. 웹 서버는 요청에 대한 응답을 보내며, 필요한 경우 새로운 쿠키를 설정하거나 기존 쿠키를 수정할 수 있음.
 
 > #### 쿠키의 작동 원리와 활용
 > - 1. 쿠키 저장 방식
@@ -76,3 +76,47 @@
 > - Django 프로젝트의 User를 나타내는 데 사용하는 모델을 지정하는 속성
 > - 주의 !!! 프로젝트 중간에 AUTH_USER_MODEL을 변경 할 수 없음
 > ![img_13.png](img_13.png)
+
+
+> ### Login
+> - 로그인은 session을 create하는 과정
+>> ![img_14.png](img_14.png)
+>> ![img_15.png](img_15.png)
+>> ![img_16.png](img_16.png)
+
+> #### AuthenticationForm()
+> - 로그인 인증에 사용할 데이터를 입력 받는 built-in form
+> - login(request, user) : AuthenticationForm을 통해 인증된 사용자를 로그인 하는 함수
+> - get_user() : AuthenticationForm의 인스턴스 메서드, 유효성 검사를 통과했을 경우 로그인 한 사용자 객체를 반환
+
+> ### Logout
+> - Session을 Delete하는 과정
+> ![img_17.png](img_17.png)
+> ![img_18.png](img_18.png)
+> - logout(request) : db에서 현재 요청에 대한 Session data삭제, 클라이언트 쿠키에서도 sessionId 삭제
+
+> ### Template with Authentication data
+> - 템플릿에서 인증 관련 데이터를 출력하는 방법
+> ![img_19.png](img_19.png)
+> - 현재 로그인 되어 있는 유저 정보 출력하기
+>   - user라는 context 데이터를 사용할 수 있는 이유? django가 미리 준비한 context 데이터가 존재하기 때문(context processors)
+
+> - context processors
+> ![img_20.png](img_20.png)
+
+> #### 쿠키의 종류별 Lifetime
+> - Session cookie : 현재 세션이 종료되면 삭제됨, 브라우저 종료와 함께 세션이 삭제됨
+> - Persistent cookies : Expires 속성에 지정된 날짜 혹은 Max-Age 속성에 지정된 기간이 지나면 삭제됨
+
+> ### 쿠키의 보안 장치
+> ![img_21.png](img_21.png)
+> - 많은 국가에서 쿠키 사용에 대한 사용자 동의를 요구하는 법규를 시행
+> - 웹사이트는 쿠키 정책을 명시하고, 필요한 경우 사용자의 동의를 얻어야 함.
+
+> #### session in Django
+> ![img_22.png](img_22.png)
+
+> #### 'AbstractUser' class
+> ![img_23.png](img_23.png)
+> - 관리자 권한과 함께 완전한 기능을 가지고 있는 User model을 구현하는 추상 기본 클래스
+> - Abstract base classes(추상 기본 클래스): 몇 가지 공통 정보를 여러 다른 모델에 넣을 때 사용하는 클래스, db 테이블을 만드는데 사용 x, 대신 다른 모델의 기본 클래스로 사용되는 경우 해당 필드가 하위 클래스의 필드에 추가 됨
