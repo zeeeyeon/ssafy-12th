@@ -8,6 +8,10 @@ from django.contrib.auth import update_session_auth_hash
 
 # Create your views here.
 def login(request):
+    #  이미 로그인 되어 있는 상태라면 그냥 메인 페이지로 보내버리기
+    if request.user.is_authenticated:
+        return redirect('articles:index')
+
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
@@ -26,6 +30,9 @@ def logout(request):
     return redirect('articles:index')
 
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect('articles:index')
+
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():

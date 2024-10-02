@@ -84,6 +84,7 @@
 > - 비인증 사용자의 경우 /accounts/login/ 주소로 redirect 시킴
 
 > #### login_required 적용
+> - 인증에 대한 클래스를 accounts로 설정해야 하는 이유 !
 > ![img_28.png](img_28.png)
 > ![img_29.png](img_29.png)
 
