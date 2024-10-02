@@ -81,10 +81,9 @@
 
 > #### login_required 데코레이터
 > - 인증된 사용자에 대해서만 view 함수를 실행시키는 데코레이터
-> - 비인증 사용자의 경우 /accounts/login/ 주소로 redirect 시킴
+> - 비인증 사용자의 경우 /accounts/login/ 주소로 redirect 시킴 : > 인증에 대한 클래스를 accounts로 설정해야 하는 이유 !
 
 > #### login_required 적용
-> - 인증에 대한 클래스를 accounts로 설정해야 하는 이유 !
 > ![img_28.png](img_28.png)
 > ![img_29.png](img_29.png)
 

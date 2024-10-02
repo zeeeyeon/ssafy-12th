@@ -129,3 +129,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+# login_url 바꾸고 싶은 경우
+# LOGIN_URL = 'ssafy/login'
