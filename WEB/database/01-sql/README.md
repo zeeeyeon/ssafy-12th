@@ -52,8 +52,59 @@
 >> - DCL : 데이터 제어
 >> ![img_14.png](image/img_14.png)
 
-> ### DQL(Data Query Language) - 데이터 검색 : select
-> ![img_15.png](image/img_15.png)
-> - select 키워드 이후 데이터를 선택하려는 필드를 하나 이상 지정
-> - from 키워드 이후 데이터를 선택하려는 테이블의 이름을 지정
+> ### DQL(Data Query Language)
+> #### 01. Querying data
+> - ***select***
+>> ![img_15.png](image/img_15.png)
+>> - select 키워드 이후 데이터를 선택하려는 필드를 하나 이상 지정
+>> - from 키워드 이후 데이터를 선택하려는 테이블의 이름을 지정
 
+> #### 02. Sorting data
+> - ***order by***
+>> ![img.png](img.png)
+>> - from clause 뒤에 위치
+>> - 하나 이상의 컬럼을 기준으로 결과를 오름차순(ASC, default), 내림차순(DESC) 정렬
+>> ![img_1.png](img_1.png)
+>> - 1. 테이블에서(from) 
+>> - 2. 조회하여 (select)
+>> - 3. 정렬 (order by)
+
+> #### 03. Filtering data
+>> ![img_2.png](img_2.png)
+
+> - ***distinct*** : 조회 결과에서 중복된 레코드를 제거
+>> ![img_3.png](img_3.png)
+>> - select 키워드 바로 뒤에 작성
+>> - select distinct 키워드 다음에 고유한 값을 선택하려는 하나 이상의 필드를 지정
+> - ***where*** : 조회 시 특정 검색 조건을 지정
+>> ![img_4.png](img_4.png)
+>> - from clause 뒤에 위치
+>> - search_condition은 비교연산자 및 논리연산자(and, or, not 등)를 사용하는 구문이 사용됨
+> - ***Comparison Operators***
+>   - 비교 연산자 [=, >=, <= , != , IS, LIKE, IN, BETWEEN...AND]
+> - ***Logical Operators***
+>   - 논리 연산자 [AND(&&), OR(||), NOT(!)]
+> - ***In Operator***
+>   - 값이 특정 목록 안에 있는지 확인
+> - ***LIKE Operator***
+>   - 값이 특정 패턴에 일치하는지 확인
+>   - % : 0개 이상의 문자열과 일치 하는지 확인
+>   - _ : 단일 문자와 일치하는지 확인
+
+> - ***LIMIT clause***
+> ![img_7.png](img_7.png)
+> ![img_8.png](img_8.png)
+> - 하나 또는 두 개의 인자를 사용(0 또는 양의 정수), row_count는 조회하는 최대 레코드 수를 지정
+
+> #### 04. Grouping data
+> - 레코드를 그룹화하여 요약본 생성('집계 합수'와 함께 사용)
+> - Aggregation Functions
+>   - 값에 대한 계산을 수행하고 단일한 값을 반환하는 함수 
+>   - SUM, AVG, MAX, MIN, COUNT
+> ![img_9.png](img_9.png)
+> - FROM 및 WHERE 절 뒤에 배치
+> - GROUP BY 절 뒤에 그룹화 할 필드 목록을 작성
+> ![img_10.png](img_10.png)
+> ![img_11.png](img_11.png)
+
+> ![img_12.png](img_12.png)
