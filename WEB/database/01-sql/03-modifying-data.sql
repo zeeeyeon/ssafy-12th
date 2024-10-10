@@ -15,8 +15,9 @@ PRAGMA table_info('articles');
 insert into articles (title, content, created_at) values ('제목 1', '내용 1', date());
 
 
-
 -- 2. Update data in table
-
+update articles
+set title = '제목 수정'
+where id = 1;
 
 -- 3. Delete data from table
