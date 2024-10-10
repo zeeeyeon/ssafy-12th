@@ -108,3 +108,73 @@
 > ![img_11.png](img_11.png)
 
 > ![img_12.png](img_12.png)
+
+
+
+> ### DDL(Data Definition Language)
+
+> #### 01. Create
+> ![img_13.png](img_13.png)
+> ![img_14.png](img_14.png)
+> ![img_15.png](img_15.png)
+> ![img_16.png](img_16.png)
+> - Constraints : 테이블 필드에 적용되는 규칙 또는 제한 사항 (데이터의 무결성을 유지하고 데이터베이스의 일관성을 보장)
+> ![img_17.png](img_17.png)
+> - autoincrement
+> ![img_18.png](img_18.png)
+
+> #### 02. Alter
+> ![img_19.png](img_19.png)
+> - column 추가
+> ![img_20.png](img_20.png)
+> ![img_21.png](img_21.png)
+> ![img_22.png](img_22.png)
+> ![img_23.png](img_23.png)
+> - column 이름 변경 (rename column)
+> ![img_24.png](img_24.png)
+> ![img_25.png](img_25.png)
+> ![img_26.png](img_26.png)
+> - column 삭제
+> ![img_27.png](img_27.png)
+> ![img_28.png](img_28.png)
+> - table 이름 변경 (rename to table)
+> ![img_30.png](img_30.png)
+> ![img_29.png](img_29.png)
+
+> #### 03. Drop
+> ![img_31.png](img_31.png)
+
+
+> ### DML(Data Manuplation Language)
+
+> #### 01. Insert
+> ![img_32.png](img_32.png)
+> ![img_33.png](img_33.png)
+> ![img_34.png](img_34.png)
+> ![img_35.png](img_35.png)
+
+> #### 02 Update
+> ![img_36.png](img_36.png)
+> ![img_37.png](img_37.png)
+> ![img_38.png](img_38.png)
+
+> #### 03. Delete
+> ![img_39.png](img_39.png)
+> ![img_40.png](img_40.png)
+> ![img_41.png](img_41.png)
+
+> ### Multi table queries
+> ***join***
+> ![img_42.png](img_42.png)
+> ![img_43.png](img_43.png)
+> ![img_44.png](img_44.png)
+> ![img_45.png](img_45.png)
+> ![img_46.png](img_46.png)
+> ![img_47.png](img_47.png)
+> ![img_48.png](img_48.png)
+> ![img_49.png](img_49.png)
+> ![img_50.png](img_50.png)
+> ![img_51.png](img_51.png)
+> ![img_52.png](img_52.png)
+> ![img_53.png](img_53.png)
+> ![img_54.png](img_54.png)
