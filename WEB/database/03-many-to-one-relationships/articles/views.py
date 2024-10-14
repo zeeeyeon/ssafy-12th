@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Article, Comment
 from .forms import ArticleForm, CommentForm
+from django.views.decorators.http import require_http_methods, require_POST, require_GET
 
 
 def index(request):
@@ -25,6 +26,10 @@ def detail(request, pk):
 
 
 @login_required
+# put/patch, delete 등의 메서드 등의 요청이 들어오게 되면?
+# 데코레이터를 통해 post, get요청만 허용하게 해둔 상태이기 때문에
+# 그때는 405 method not allowed 반환
+@required_http_methods(['POST', 'GET'])
 def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
@@ -40,6 +45,7 @@ def create(request):
 
 
 @login_required
+@require_POST
 def delete(request, pk):
     article = Article.objects.get(pk=pk)
     article.delete()

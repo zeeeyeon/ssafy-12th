@@ -1,4 +1,4 @@
-# Many to one relationships 02 🚀
+# Many to one relationships 03 🚀
 
 > ### Article & User
 > ![img.png](image/img.png)
