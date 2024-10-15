@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Articles</h1>
+  {% for article in articles %}
+    <p>제목 : {{ article.title }}</p>
+{#  같은 쿼리를 10번 보내고 있음    #}
+{#    <p>댓글개수 : {{ article.comment_set.count }}</p>#}
+
+{#   변경 후  #}
+    {% comment %} <p>댓글개수 : {{ article.comment__count }}</p> {% endcomment %}
+    <hr>
+  {% endfor %}
+</body>
+</html>
