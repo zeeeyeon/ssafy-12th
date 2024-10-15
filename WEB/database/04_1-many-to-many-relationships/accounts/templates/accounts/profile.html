@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+    <h1>{{ person.username }}의 프로필</h1>
+
+    <div>
+        팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+    </div>
+
+    {% if request.user != person %}
+    <form action="{% url 'accounts:follow' person.pk %}" method="post">
+        {% csrf_token %}
+        {% if request.user in person.followers.all %}
+        <button>Unfollow</button>
+        {% else %}
+        <button>Follow</button>
+        {% endif %}
+    </form>
+    {% endif %}
+
+{#  유저가 작성한 게시글  #}
+    <h1>{{ person.username }}의 게시글</h1>
+    {% for article in person.article_set.all %}
+        <p>{{ article.title }}</p>
+    {% endfor %}
+
+{#  유저가 작성한 댓글  #}
+    <h1>{{ person.username }}가 작성한 댓글</h1>
+    {% for comment in person.comment_set.all %}
+        <p>{{ comment.title }}</p>
+    {% endfor %}
+
+{#  유저가 좋아요한 게시글  #}
+    <h1>{{ person.username }}가 좋아요한 게시글</h1>
+    {% for article in person.like_articles.all %}
+        <p>{{ article }}</p>
+    {% endfor %}
 </body>
 </html>
