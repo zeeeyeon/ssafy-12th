@@ -18,10 +18,12 @@ def article_list(request):
     # elif를 사용하여 명시하는 것을 권장함
     elif request.method == 'POST':
         serializer = ArticleSerializer(data=request.data)
-        if serializer.is_valid():
+        # raise_exception 을 사용할 경우 자동으로 400을 리턴해줌
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data, status.HTTP_201_CREATED)
-        return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+        # 이 부분 생략 가능
+        # return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET', 'DELETE', 'PUT'])
