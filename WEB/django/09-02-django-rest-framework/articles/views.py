@@ -20,9 +20,13 @@ def article_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
+# get
+# 조회한 객체가 없을 때 doesnotexist 발생
+# 반환해야 할 객체가 2개 이상일 때 multiple~ 발생
+# 코드 중단
 @api_view(['GET', 'DELETE', 'PUT'])
 def article_detail(request, article_pk):
-    article = Article.objects.get(pk=article_pk)
+    article = Article.get_object_or_404().get(pk=article_pk)
 
     if request.method == 'GET':
         serializer = ArticleSerializer(article)
@@ -43,7 +47,7 @@ def article_detail(request, article_pk):
 
 @api_view(['GET'])
 def comment_list(request):
-    comments = Comment.objects.all()
+    comments = Comment.get_list_or_404().all()
     serializer = CommentSerializer(comments, many=True)
     return Response(serializer.data)
 
