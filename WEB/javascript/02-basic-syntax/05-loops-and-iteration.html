@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // while
+    let i = 0
+
+    while (i < 6) {
+      console.log(i)
+      i += 1
+    }
+
+    // for
+
+    for (let i = 0; i < 6; i++) {
+      console.log(i)
+    }
+
+    // for...in : 객체의 열거 가능한 속성(), 속성을 출력, 객체 전용
+    const object = {
+      a: 'apple',
+      b: 'banana'
+    }
+
+    // key-value 형태의 객체
+    for (const property in object) {
+      console.log(property)
+      console.log(object[property])
+    }
+
+
+    // for...of
+    // oop의 객체, 순서가 존재 (순서를 보장하는 객체의 반복), 반복가능한 배열, String
+    const numbers = [0, 1, 2, 3]
+
+    // {
+    //   0:0,
+    //   1:1
+    // }
+
+
+    for (const number of numbers) {
+      console.log(number)
+    }
+
+    const myStr = 'apple'
+
+    for (const char of myStr) {
+      console.log(char)
+    }
+
+
+    // for...in 과 for...of 의 차이
+    const arr = ['a', 'b', 'c']
+
+    for (const i in arr) {
+      console.log(i) // 0, 1, 2
+    }
+
+    for (const i of arr) {
+      console.log(i) // a, b, c
+    }
+  </script>
+</body>
+
+</html>
