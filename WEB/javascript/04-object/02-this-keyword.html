@@ -22,7 +22,7 @@
     const myFunc = function () {
       return this
     }
-    console.log(myFunc()) // ??
+    console.log(myFunc()) // window
 
     // 1.2 메서드 호출 시 this
     const myObj = {
@@ -31,7 +31,7 @@
         return this
       }
     }
-    console.log(myObj.myFunc()) // ??
+    console.log(myObj.myFunc()) //  myObj
 
     // 2. 중첩된 함수에서의 this
     // 2.1 일반 함수
@@ -39,7 +39,9 @@
       numbers: [1, 2, 3],
       myFunc: function () {
         this.numbers.forEach(function (number) {
-          console.log(this) // ??
+          // 중첩된 함수에서의 문제점 : window 아닌 myObj2가 알맞음
+          // 해결책 : myObj3처럼 화살표 함수로 변경하면 됨!
+          console.log(this) // window
         })
       }
     }
@@ -50,7 +52,9 @@
       numbers: [1, 2, 3],
       myFunc: function () {
         this.numbers.forEach((number) => {
-          console.log(this) // ??
+          // 화살표 함수는 자신만의 this 가지지 않음
+          // 외부 함수(myFunc === 부모)에서의 this 값을 가져옴
+          console.log(this) // myObj3
         })
       }
     }

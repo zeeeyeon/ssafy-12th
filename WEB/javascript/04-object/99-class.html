@@ -10,7 +10,15 @@
 <body>
   <script>
     // 클래스
-    class Member { }
+    class Member {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      sayHi() {
+        return `Hi I am ${this.name}`;
+      }
+    }
 
     console.log() // Member { name: 'Alice', age: 20 }
     console.log() // Alice
