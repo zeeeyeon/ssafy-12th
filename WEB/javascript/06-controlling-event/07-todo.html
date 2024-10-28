@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="input-text">
+  <button id="btn">+</button>
+  <ul></ul>
+
+  <script>
+    const inputTag = document.querySelector('input');
+    const buttonTag = document.querySelector('#btn');
+    const ulTag = document.querySelector('ul');
+
+    buttonTag.addEventListener('click', event => {
+      const inputText = inputTag.value
+
+      const liTag = document.createElement('li')
+
+      liTag.textContent = inputText
+
+      ulTag.appendChild(liTag)
+
+      inputTag.value = ''
+    })
+  </script>
+</body>
+
+</html>

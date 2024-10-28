@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #outerouter {
+      width: 300px;
+      height: 300px;
+      background-color: yellowgreen;
+    }
+
+    #outer {
+      width: 200px;
+      height: 200px;
+      background-color: crimson;
+    }
+
+    #inner {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outerouter">
+    outerouter
+    <div id="outer">
+      outer
+      <div id="inner">inner</div>
+    </div>
+  </div>
+
+<!--  target : 실제 이벤트를 클릭 한 지점-->
+<!--  currentTarget : (이벤트 리스너가 부착된 지점 == this)-->
+<!--  클릭 이벤트가 어디서 발생했든 상관없이 outerouter까지 이벤크가 버블링 되어 핸들러를 실행시키기 때문-->
+  <script>
+    const outerOuterElement = document.querySelector('#outerouter')
+    const outerElement = document.querySelector('#outer')
+    const innerElement = document.querySelector('#inner')
+
+    const clickHandler = function (event) {
+      console.log('currentTarget:', event.currentTarget.id)
+      console.log('target:', event.target.id)
+    }
+
+    outerOuterElement.addEventListener('click', clickHandler)
+  </script>
+</body>
+
+</html>
