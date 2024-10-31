@@ -10,6 +10,9 @@
 <body>
   <div id="app">
     <!-- unwrap 문제 상황 -->
+<!--    [object Object]1으로 출력되는 상황, 최상위 속성이 아님-->
+<!--    const object = {id: ref(0)} -->
+<!--    const {id} = object로 풀어줘야 함-->
     <p>{{ object.id + 1}}</p>
 
     <!-- 해결책 : ref가 최상위 속성이 되어야 함 -->

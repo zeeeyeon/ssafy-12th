@@ -9,9 +9,9 @@
 
 <body>
   <div id="app">
-    <p>반응형 변수: </p>
-    <p>일반 변수: </p>
-    <button>값 업데이트</button>
+    <p>반응형 변수: {{ refValue }}</p>
+    <p>일반 변수: {{normalValue }}</p>
+    <button v-on:click="updateValue">값 업데이트</button>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -20,7 +20,19 @@
 
     const app = createApp({
       setup() {
-        return {}
+        const refValue = ref(0)
+
+        // 일반 변수 값의 증가는 일어나지만, 반응형 변수가 아니기 때문에 추적되지 않음(DOM과 같이 업데이트 되지 않음)
+        let normalValue = 0
+        const updateValue = function () {
+          refValue.value++
+          normalValue++
+          console.log(refValue)
+          console.log(normalValue)
+        }
+        return {
+          refValue, normalValue, updateValue
+        }
       }
     })
 

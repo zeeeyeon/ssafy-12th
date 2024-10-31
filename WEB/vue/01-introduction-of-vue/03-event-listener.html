@@ -9,14 +9,26 @@
 
 <body>
   <div id="app">
-    <button></button>
+    <button v-on:click="increment">{{ number }}</button>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
-    const { createApp } = Vue
+    const { createApp, ref } = Vue
 
-    const app = createApp({})
+    const app = createApp({
+      setup() {
+        const number = ref(0)
+        const increment = function () {
+          console.log(number) // ref 객체
+          number.value++
+        }
+        return {
+          // 마운트 된 영역에 사용하려면 무조건 return으로 넘겨줘야 함~
+          number, increment
+        }
+      }
+    })
 
     app.mount('#app')
   </script>

@@ -9,9 +9,27 @@
 
 <body>
   <div id="app">
+    <h1>{{ message }}</h1>
   </div>
 
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
+    const { createApp, ref } = Vue
+
+    // 객체 형식으로 만들어서 value의 값만 변경하는 식으로 ~
+    const app = createApp({
+      setup() {
+        const message = ref('hello')
+        console.log(message)
+        console.log(message.value)
+        return {
+          message
+        }
+      }
+    })
+
+    app.mount('#app')
   </script>
 </body>
 
