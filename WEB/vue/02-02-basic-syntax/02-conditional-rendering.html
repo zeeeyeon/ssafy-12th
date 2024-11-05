@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- if else -->
+    <p v-if="isSeen">true일때 보여요</p>
+    <p v-else>false일때 보여요</p>
+    <button @click="isSeen = !isSeen">토글</button>
+
+    <!-- else if -->
+    <div v-if="name === 'Alice'">Alice입니다</div>
+    <div v-else-if="name === 'Bella'">Bella입니다</div>
+    <div v-else-if="name === 'Cathy'">Cathy입니다</div>
+    <div v-else>아무도 아닙니다.</div>
+
+    <!-- v-if on <template>, template은 묶어주는 역할, 최종 레이아웃에 출력되지 않음. -->
+    <!-- 보이지 않는 wrapper의 역할  -->
+    <template v-if="name === 'Cathy'">
+      <div>Cathy입니다</div>
+      <div>나이는 30살입니다</div>
+    </template>
+
+    <!-- v-show -->
+    <!--  if는 아예 화면에 그리지 않음, show는 그리지만 화면에 display = None으로 변경(가시성 전환)  -->
+    <div v-show="isShow">v-show</div>
+  </div>
+<!-- 콘텐츠를 자주 전환해야하는 경우 v-show, 조건이 변경되지 않는 경우 v-if-->
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const isSeen = ref(true)
+        const name = ref('Cathy')
+        const isShow = ref(false)
+
+        return {
+          isSeen,
+          name,
+          isShow
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
