@@ -1,7 +1,7 @@
 <script setup>
 import MyComponentItem from "@/components/MyComponentItem.vue";
 
-const input = ref(null);
+// const input = ref(null);
 
 </script>
 
@@ -13,9 +13,9 @@ const input = ref(null);
     <MyComponentItem/>
     <input ref="input"></input>
 
-    onMounted(() => {
-      console.log(input)
-    })
+<!--    onMounted(() => {-->
+<!--      console.log(input)-->
+<!--    })-->
   </div>
 </template>
 
