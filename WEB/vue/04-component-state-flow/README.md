@@ -57,7 +57,6 @@
 > ![img_48.png](images/img_48.png)
 > ![img_49.png](images/img_49.png)
 
-
 > #### 이벤트 전달
 > ![img_40.png](images/img_40.png)
 > ![img_41.png](images/img_41.png)
