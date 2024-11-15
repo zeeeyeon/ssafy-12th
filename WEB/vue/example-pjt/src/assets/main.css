@@ -1,0 +1,10 @@
+nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 클릭했을 때 현재페이지로 이동하는 링크 색 활성화 */
+nav a.router-link-exact-active {
+    color: palevioletred;
+}
