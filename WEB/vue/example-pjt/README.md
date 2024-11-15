@@ -1,29 +1,7 @@
-# example-pjt
+> ### 고민✨
+> ![img.png](img.png)
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+> ### 해결 방법
+> 1. 다시 요청을 못하도록 새로고침 막아버리기
+> 2. 새로고침 시 home 으로 보내기
+> 3. 새로고침이 감지됐을 때 해당 페이지에서 필요한 데이터 다시 다 받아오기 (랜더링 시간이 걸릴 수 있음)
